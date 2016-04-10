@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php require 'create_db.php' ?>
+<?php
+	//Start session
+	session_start();	
+	//Unset the variables stored in session
+	unset($_SESSION['SESS_MEMBER_ID']);
+	unset($_SESSION['SESS_FIRST_NAME']);
+	unset($_SESSION['SESS_LAST_NAME']);
+	unset($_SESSION['SU']);
+?>
 <html lang="en">
 
     <head>
@@ -6,7 +15,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap Login &amp; Register Templates</title>
+        <title>Pay Now</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -41,7 +50,7 @@
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>PayNow</strong> Login or Register</h1>
+                            <h1><strong>PayNow</strong><br>Login or Register</h1>
                             <div class="description">
                             	<p>
 	                            	Login or register here to access PayNow, as a vendor or a user.
@@ -49,10 +58,9 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="row">
                         <div class="col-sm-5">
-
                         	<div class="form-box">
 	                        	<div class="form-top">
 	                        		<div class="form-top-left">
@@ -63,19 +71,103 @@
 	                        			<i class="fa fa-key"></i>
 	                        		</div>
 	                            </div>
-	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="login-form">
-				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-username">Username</label>
-				                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-password">Password</label>
-				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
-				                        </div>
-				                        <button type="submit" class="btn">Sign in!</button>
-				                    </form>
-			                    </div>
+  <ul class="nav nav-tabs" align="center">
+    <li class="active"><a data-toggle="tab" href="#home">Admin</a></li>
+    <li><a data-toggle="tab" href="#menu1">Customer</a></li>
+    <li><a data-toggle="tab" href="#menu2">Vendor</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <div class="form-bottom">
+            <form class="form-signin" name="loginform" action="login/login_exec.php" method="post" autocomplete="off" role="form">
+                <?php
+				    if(isset($_SESSION['ERRMSG_ARR'])&&is_array($_SESSION['ERRMSG_ARR'])&&count($_SESSION['ERRMSG_ARR'])>0) 
+				    {
+					    echo('<div class="alert alert-danger">');
+					    echo '<ul class="err">';
+					    foreach($_SESSION['ERRMSG_ARR'] as $msg) 
+					    {
+                            echo '<li><strong>Error! </strong>',$msg,'</li>'; 
+					    }
+					    echo '</ul>';
+					    unset($_SESSION['ERRMSG_ARR']);
+					    echo('</div>');
+				    }
+			     ?>
+            	<div class="form-group">
+            		<label class="sr-only" for="form-username">Username</label>
+                	<input type="text" name="username" placeholder="Username..." class="form-username form-control" id="form-username">
+                </div>
+                <div class="form-group">
+                	<label class="sr-only" for="form-password">Password</label>
+                	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
+                </div>
+                    <button type="submit" class="btn">Sign in!</button>
+                </form>
+           </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <div class="form-bottom">
+            <form class="form-signin" name="loginform" action="login/login_exec.php" method="post" autocomplete="off" role="form">
+                <?php
+				    if(isset($_SESSION['ERRMSG_ARR'])&&is_array($_SESSION['ERRMSG_ARR'])&&count($_SESSION['ERRMSG_ARR'])>0) 
+				    {
+					    echo('<div class="alert alert-danger">');
+					    echo '<ul class="err">';
+					    foreach($_SESSION['ERRMSG_ARR'] as $msg) 
+					    {
+                            echo '<li><strong>Error! </strong>',$msg,'</li>'; 
+					    }
+					    echo '</ul>';
+					    unset($_SESSION['ERRMSG_ARR']);
+					    echo('</div>');
+				    }
+			     ?>
+            	<div class="form-group">
+            		<label class="sr-only" for="form-username">Username</label>
+                	<input type="text" name="username" placeholder="Username..." class="form-username form-control" id="form-username">
+                </div>
+                <div class="form-group">
+                	<label class="sr-only" for="form-password">Password</label>
+                	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
+                </div>
+                    <button type="submit" class="btn">Sign in!</button>
+                </form>
+           </div>
+      </div>
+    <div id="menu2" class="tab-pane fade">
+      <div class="form-bottom">
+            <form class="form-signin" name="loginform" action="login/login_exec.php" method="post" autocomplete="off" role="form">
+                <?php
+				    if(isset($_SESSION['ERRMSG_ARR'])&&is_array($_SESSION['ERRMSG_ARR'])&&count($_SESSION['ERRMSG_ARR'])>0) 
+				    {
+					    echo('<div class="alert alert-danger">');
+					    echo '<ul class="err">';
+					    foreach($_SESSION['ERRMSG_ARR'] as $msg) 
+					    {
+                            echo '<li><strong>Error! </strong>',$msg,'</li>'; 
+					    }
+					    echo '</ul>';
+					    unset($_SESSION['ERRMSG_ARR']);
+					    echo('</div>');
+				    }
+			     ?>
+            	<div class="form-group">
+            		<label class="sr-only" for="form-username">Username</label>
+                	<input type="text" name="username" placeholder="Username..." class="form-username form-control" id="form-username">
+                </div>
+                <div class="form-group">
+                	<label class="sr-only" for="form-password">Password</label>
+                	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
+                </div>
+                    <button type="submit" class="btn">Sign in!</button>
+                </form>
+           </div>
+      </div>
+  </div>
+
+	                            
 		                    </div>
 
 		                	<div class="social-login">
@@ -111,23 +203,18 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="registration-form">
+                                    <form action="new_cust.php" role="form" method="post" autocomplete="off" class="registration-form">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-first-name">First name</label>
-				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+				                        	<input type="text" name="fnm" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-last-name">Last name</label>
-				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+				                        	<input type="text" name="lnm" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
-				                        	<textarea name="form-about-yourself" placeholder="About yourself..."
-				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
+				                        	<input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
 				                        </div>
 				                        <button type="submit" class="btn">Sign me up!</button>
 				                    </form>
@@ -141,32 +228,33 @@
             </div>
 
         </div>
-
-        <!-- Footer -->
-        <footer>
-        	<div class="container">
-        		<div class="row">
-
-        			<div class="col-sm-8 col-sm-offset-2">
-        				<div class="footer-border"></div>
-        				<p>Made by Anli Zaimi at <a href="http://azmind.com" target="_blank"><strong>AZMIND</strong></a>
-        					having a lot of fun. <i class="fa fa-smile-o"></i></p>
-        			</div>
-
-        		</div>
-        	</div>
-        </footer>
-
         <!-- Javascript -->
         <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/scripts.js"></script>
-
-        <!--[if lt IE 10]>
-            <script src="assets/js/placeholder.js"></script>
-        <![endif]-->
-
     </body>
-
+    <style>
+        .nav-tabs
+        {
+            background-color:#fff;
+        }
+        .tab-content
+        {
+            background-color:#fff;
+            color:#fff;
+            padding:5px
+        }
+        .nav-tabs > li > a
+        {
+            border: medium none;
+        }
+        .nav-tabs > li > a:hover
+        {
+            background-color: #fff !important;
+            border: medium none;
+            border-radius: 0;
+            color:#161616;
+        }
+    </style>
 </html>
