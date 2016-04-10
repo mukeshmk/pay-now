@@ -48,7 +48,7 @@
 	}
  
 	//Create query
-	$qry="SELECT * FROM admins WHERE a_nm='$username' AND a_pwd='$password'";
+	$qry="SELECT * FROM customer WHERE c_unm='$username' AND c_pwd='$password'";
 	$result=mysql_query($qry);
  
 	//Check whether the query was successful or not
@@ -59,10 +59,10 @@
 			//Login Successful
 			session_regenerate_id();
 			$member = mysql_fetch_assoc($result);
-			$_SESSION['SESS_MEMBER_ID'] = $member['admin_id'];
-			$_SESSION['SESS_FIRST_NAME'] = $member['a_nm'];
-			$_SESSION['SESS_LAST_NAME'] = $member['a_pwd'];
-			$_SESSION['SU'] = $member['su'];
+			$_SESSION['SESS_MEMBER_ID'] = $member['c_id'];
+			$_SESSION['SESS_FIRST_NAME'] = $member['c_unm'];
+			$_SESSION['SESS_LAST_NAME'] = $member['c_pwd'];
+			$_SESSION['SU'] = FALSE;
 			session_write_close();
 			header("location: ../home.php");
 			exit();

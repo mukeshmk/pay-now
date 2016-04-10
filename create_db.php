@@ -49,9 +49,9 @@
 	CREATE TABLE customer
 	(
   		c_id INT AUTO_INCREMENT,
-  		c_fnm VARCHAR(30) NOT NULL,
-        c_lnm VARCHAR(30) NOT NULL,
-        c_email VARCHAR(30) NOT NULL,
+  		c_email VARCHAR(30) NOT NULL,
+        c_unm VARCHAR(20) NOT NULL,
+        c_pwd VARCHAR(30) NOT NULL,
   		c_account INT DEFAULT 0 CHECK(c_account >= 0),
         c_active INT DEFAULT 1 CHECK(c_active IN(0,1)),
   		CONSTRAINT pk3a PRIMARY KEY(c_id)

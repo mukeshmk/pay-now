@@ -80,7 +80,7 @@
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
         <div class="form-bottom">
-            <form class="form-signin" name="loginform" action="login/login_exec.php" method="post" autocomplete="off" role="form">
+            <form class="form-signin" name="loginform" action="login/login_exec_admin.php" method="post" autocomplete="off" role="form">
                 <?php
 				    if(isset($_SESSION['ERRMSG_ARR'])&&is_array($_SESSION['ERRMSG_ARR'])&&count($_SESSION['ERRMSG_ARR'])>0) 
 				    {
@@ -109,7 +109,7 @@
     </div>
     <div id="menu1" class="tab-pane fade">
       <div class="form-bottom">
-            <form class="form-signin" name="loginform" action="login/login_exec.php" method="post" autocomplete="off" role="form">
+            <form class="form-signin" name="loginform" action="login/login_exec_customer.php" method="post" autocomplete="off" role="form">
                 <?php
 				    if(isset($_SESSION['ERRMSG_ARR'])&&is_array($_SESSION['ERRMSG_ARR'])&&count($_SESSION['ERRMSG_ARR'])>0) 
 				    {
@@ -138,7 +138,7 @@
       </div>
     <div id="menu2" class="tab-pane fade">
       <div class="form-bottom">
-            <form class="form-signin" name="loginform" action="login/login_exec.php" method="post" autocomplete="off" role="form">
+            <form class="form-signin" name="loginform" action="login/login_exec_vendor.php" method="post" autocomplete="off" role="form">
                 <?php
 				    if(isset($_SESSION['ERRMSG_ARR'])&&is_array($_SESSION['ERRMSG_ARR'])&&count($_SESSION['ERRMSG_ARR'])>0) 
 				    {
@@ -189,16 +189,16 @@
 	                            <div class="form-bottom">
                                     <form action="new_cust.php" role="form" method="post" autocomplete="off" class="registration-form">
 				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-first-name">First name</label>
-				                        	<input type="text" name="fnm" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+				                        	<label class="sr-only" for="form-unm">User Name</label>
+				                        	<input type="text" name="unm" placeholder="User name..." class="form-nsername form-control" id="form-email">
 				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-last-name">Last name</label>
-				                        	<input type="text" name="lnm" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
-				                        </div>
-				                        <div class="form-group">
+                                        <div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
 				                        	<input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
+				                        </div>
+                                        <div class="form-group">
+				                        	<label class="sr-only" for="form-pwd">Password</label>
+				                        	<input type="password" name="pwd" placeholder="Password..." class="form-pwd form-control" id="form-email">
 				                        </div>
 				                        <button type="submit" class="btn">Sign me up!</button>
 				                    </form>

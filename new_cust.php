@@ -8,8 +8,8 @@
         <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css" />
 	</head>
 <?php
-	$c_fnm=$_POST['fnm'];
-	$c_lnm=$_POST['lnm'];
+	$c_unm=$_POST['unm'];
+	$c_pwd=$_POST['pwd'];
 	$c_email=$_POST['email'];
 	
 
@@ -22,7 +22,7 @@
 	$c="USE paynow;";
 	$c1=mysqli_query($connect,$c);
 
-	$q1="INSERT INTO customer(c_fnm,c_lnm,c_email) VALUES ('$c_fnm','$c_lnm','$c_email')";
+	$q1="INSERT INTO customer(c_unm,c_pwd,c_email) VALUES ('$c_unm','$c_pwd','$c_email')";
 	if(!mysqli_query($connect,$q1))
 	{
 		echo"<head>
@@ -85,10 +85,10 @@
                             </div>
                             <div class="panel-body">
                                 <div class="form-group">
-                                    First Name:<b><?php echo $c_fnm; ?></b>
+                                    User Name:<b><?php echo $c_unm; ?></b>
                                 </div>
                                 <div class="form-group">
-                                    Last Name:<b><?php echo $c_lnm; ?></b>
+                                    Password:<b><?php echo $c_pwd; ?></b>
                                 </div>
                                 <div class="form-group">
                                     E-Mail<b> <?php echo $c_email; ?></b>
