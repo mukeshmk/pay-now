@@ -76,6 +76,40 @@
                     <p>This service aims at saving time and paper for the vendors and users alike. <br>You just need a mobile phone to get started!</p>
                 </div>
             </div>
+            <div class="box">
+                <h1>
+                    Your current Balance: <strong>
+                    <?php
+                        $connect=mysqli_connect("localhost","root","");
+                        if (!$connect) 
+                        {
+                            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                        }
+                        else
+	                   {
+                            mysqli_set_charset($connect, 'utf8');
+                            if (!mysqli_select_db($connect, 'paynow')) 
+                            { 
+                                echo "Unable to locate database."; 
+                            }
+                        }   
+                        $result = mysqli_query($connect, "SELECT c_account FROM customer where c_id = '".$_SESSION['SESS_MEMBER_ID']."'");
+                        if (!$result)  
+                        {  
+    	                   echo "Error fetching data: " . mysqli_error($connect);  
+                        }
+                        if(mysqli_num_rows($result) > 0) 
+                        {
+                            while ($row = mysqli_fetch_array($result))
+    	                    {
+    		                  $bal = $row['c_account'];
+    	                    }
+                        }
+                        echo $bal;
+                    ?>
+                    </strong>
+                </h1>
+            </div>
         </div>
         <!-- Javascript -->
         <script src="../assets/js/jquery-1.11.1.min.js"></script>
@@ -113,9 +147,12 @@
             border-radius: 0;
             color:#161616;
         }
-        .footer {
-            color: black;
-            display: block;
-        } 
+        .box 
+        {
+            margin-bottom: 20px;
+            padding: 30px 15px;
+            background: rgba(225,225,225,0.8);
+        }
+ 
     </style>
 </html>

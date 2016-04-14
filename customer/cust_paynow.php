@@ -31,7 +31,7 @@
         <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 
     </head>
-    <body>
+    <body background="../assets/img/cust_home.jpg">
             <!-- Navigation -->
         <nav class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -67,6 +67,13 @@
         <div class="container">
             <div class="jumbotron">
                 <div align="center">
+                    <p>
+                        Show this to the Vendor to <strong>PayNow</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <div align="center">
                     <img src='"REMOVEMEhttps://api.qrserver.com/v1/create-qr-code/?data=<?php echo $_SESSION['SESS_MEMBER_ID']?>";size=100x100"' alt="" onError="this.src='../assets/img/QR Codes/1.png';" />
                 </div>
             </div>
@@ -85,6 +92,20 @@
         <script src="../assets/js/scripts.js"></script>
     </body>
     <style>
+        body 
+        {
+            background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+        .box 
+        {
+            margin-bottom: 20px;
+            padding: 30px 15px;
+            background: rgba(225,225,225,0.8);
+        }
         .nav-tabs
         {
             background-color:#fff;
