@@ -31,7 +31,7 @@
         <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 
     </head>
-    <body>
+    <body background="../assets/img/cust_home.jpg">
             <!-- Navigation -->
         <nav class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -84,6 +84,14 @@
         <script src="../assets/js/scripts.js"></script>
     </body>
     <style>
+        body 
+        {
+            background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
         .nav-tabs
         {
             background-color:#fff;

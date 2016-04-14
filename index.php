@@ -44,18 +44,10 @@
 
         <!-- Top content -->
         <div class="top-content">
-
-            <div class="inner-bg">
                 <div class="container">
-
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
                             <h1><strong>PayNow</strong><br>Login or Register</h1>
-                            <div class="description">
-                            	<p>
-	                            	Login or register here to access PayNow, as a vendor or a user.
-                            	</p>
-                            </div>
                         </div>
                     </div>
                     
@@ -207,10 +199,7 @@
 
                         </div>
                     </div>
-
                 </div>
-            </div>
-
         </div>
         <!-- Javascript -->
         <script src="assets/js/jquery-1.11.1.min.js"></script>
