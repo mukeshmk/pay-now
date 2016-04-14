@@ -11,10 +11,10 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/form-elements.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../assets/css/form-elements.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,17 +24,90 @@
         <![endif]-->
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="../assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 
     </head>
     <body>
-        <div align="center">
-            <img src='"REMOVEMEhttps://api.qrserver.com/v1/create-qr-code/?data=<?php echo $_SESSION['SESS_MEMBER_ID']?>";size=100x100"'
-                alt="" onError="this.src='../assets/img/QR Codes/1.png';" />
+            <!-- Navigation -->
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="#">PayNow</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="cust_home.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="cust_paynow.php">Pay Now</a>
+                    </li>
+                    <li>
+                        <a href="cust_sett.php">Settings</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+        			<li><a href='../index.php'><span class="glyphicon glyphicon-off"></span> Log Out</a></li>
+      			</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div class="container">
+            <div class="jumbotron">
+                 <div class="clearfix content-heading">
+                    <img class="pull-left" width=200 height=200 src="../assets/img/intro-pic.jpg"/>
+                    <h2 class="intro-text text-center">Shop anywhere
+                        <strong>without any paper!</strong>
+                    </h2>
+                    <hr class="visible-xs">
+                    <p><strong>PayNow</strong> is a one-stop payment system. It is a centralized payment system for places which require payments at multiple places like job fairs, technology fests, food courts, etc.</p>
+                    <p>This service aims at saving time and paper for the vendors and users alike. <br>You just need a mobile phone to get started!</p>
+                </div>
+            </div>
         </div>
+        <!-- Javascript -->
+        <script src="../assets/js/jquery-1.11.1.min.js"></script>
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/jquery.backstretch.min.js"></script>
+        <script src="../assets/js/scripts.js"></script>
     </body>
+    <style>
+        .nav-tabs
+        {
+            background-color:#fff;
+        }
+        .tab-content
+        {
+            background-color:#fff;
+            color:#fff;
+            padding:5px
+        }
+        .nav-tabs > li > a
+        {
+            border: medium none;
+        }
+        .nav-tabs > li > a:hover
+        {
+            background-color: #fff !important;
+            border: medium none;
+            border-radius: 0;
+            color:#161616;
+        }
+        .footer {
+            color: black;
+            display: block;
+        } 
+    </style>
 </html>
