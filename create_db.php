@@ -71,6 +71,16 @@
 	)";
 	$result2c=mysqli_query($connect,$qry2c);
 
+    $qry2d="
+	CREATE TABLE temp_cart
+	(
+  		item_no INT NOT NULL,
+  		item_nm VARCHAR(20) NOT NULL,
+  		item_price INT DEFAULT 10
+	)";
+	$result2d=mysqli_query($connect,$qry2d);
+
+
     $qry3b="
 	CREATE TABLE cust_logs
 	(
