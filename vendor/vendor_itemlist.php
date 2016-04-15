@@ -77,6 +77,22 @@
     }
     
     $_SESSION['cid'] = $_GET['cid'];
+    $result = mysqli_query($connect, "SELECT c_id FROM customer where c_id = '" .$_SESSION['cid']."'");
+    if (!$result)  
+    {  
+    	echo "Error fetching data: " . mysqli_error($connect);
+    }
+    if(mysqli_num_rows($result) == 0)
+    {
+        echo '
+            <html>
+	           <meta http-equiv="refresh" content="0; URL=vendor_cancel.php">
+	           <meta name="keywords" content="automatic redirection">
+            </html>
+        ';
+    }
+    else
+    {
     
     $result = mysqli_query($connect, "SELECT item_no, item_nm, item_price, v_id FROM item_list where v_id = '" .$_SESSION['SESS_MEMBER_ID']."'");
     if (!$result)  
@@ -171,4 +187,5 @@
             color:#161616;
         }
     </style>
+    <?php } ?>
 </html>
