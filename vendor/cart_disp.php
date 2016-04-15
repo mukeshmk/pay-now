@@ -59,6 +59,7 @@
         $sno = $sno + 1;
         $total = $total + $row["item_price"];
 	}
+    $_SESSION['total'] = $total;
     echo "
         <tr>
        	<td><strong>Total Price</strong></td>
