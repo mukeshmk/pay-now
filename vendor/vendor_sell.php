@@ -77,6 +77,6 @@
     mysqli_close($connect);
 ?>
 <html>
-<!--	<meta http-equiv="refresh" content="0; URL=vendor_cancel.php">
-	<meta name="keywords" content="automatic redirection">-->
+	<meta http-equiv="refresh" content="0; URL=vendor_cancel.php">
+	<meta name="keywords" content="automatic redirection">
 </html>
