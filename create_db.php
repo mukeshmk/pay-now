@@ -61,7 +61,7 @@
     $qry2c="
 	CREATE TABLE vendor_logs
 	(
-  		vl_id INT NOT NULL,
+  		vl_id INT AUTO_INCREMENT,
         v_id INT NOT NULL,
         c_id INT NOT NULL,
   		c_price INT NOT NULL,
@@ -84,7 +84,7 @@
     $qry3b="
 	CREATE TABLE cust_logs
 	(
-  		cl_id INT NOT NULL,
+  		cl_id INT AUTO_INCREMENT,
         v_id INT NOT NULL,
         c_id INT NOT NULL,
   		c_price INT NOT NULL,
