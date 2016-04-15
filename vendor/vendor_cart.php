@@ -57,7 +57,7 @@
             <!-- /.navbar-collapse -->
         </nav>
         <br><br><br>
-        <div class="container">            
+        <div class="container box">            
             <?php
                 echo("<br><br><br>");
 	            require"cart_disp.php"
@@ -71,6 +71,20 @@
     <script src="fun.js"></script>
 
     <style>
+        body 
+        {
+            background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+        .box 
+        {
+            margin-bottom: 20px;
+            padding: 30px 15px;
+            background: rgba(225,225,225,0.8);
+        }
         .nav-tabs
         {
             background-color:#fff;

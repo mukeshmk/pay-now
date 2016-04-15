@@ -74,17 +74,36 @@
                     <div class="col-sm-2"></div>
                 </form>
             </div>
+            <div class="box">
+                <form method='post' action='vendor_logs.php' align="center" role="form">
+                    <button type='submit' class=' btn btn-primary'>
+				        <span class="glyphicon glyphicon-book"></span> Check Logs
+                    </button>
+                </form>
+            </div>
         </div>
-    
-    
+        
     </body> 
     <script src="../assets/js/jquery-1.11.1.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/jquery.backstretch.min.js"></script>
     <script src="../assets/js/scripts.js"></script>
-    <script src="fun.js"></script>
 
     <style>
+        body 
+        {
+            background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+        .box 
+        {
+            margin-bottom: 20px;
+            padding: 30px 15px;
+            background: rgba(225,225,225,0.8);
+        }
         .nav-tabs
         {
             background-color:#fff;
