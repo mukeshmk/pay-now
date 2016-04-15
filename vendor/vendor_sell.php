@@ -17,6 +17,7 @@
     }
     $_POST['cid']=$_SESSION['cid'];
     $bal = 0;
+    
     $result = mysqli_query($connect, "SELECT c_account FROM customer where c_id = '" .$_SESSION['cid']."'");
     if (!$result)  
     {  
@@ -30,6 +31,7 @@
     	}
     }
     $bal = $bal - $_SESSION['total'];
+    
     $q1="UPDATE customer SET c_account = ".$bal." WHERE c_id = ".$_SESSION['cid'];
 	$r=mysqli_query($connect,$q1);
     if (!$r)  
@@ -50,15 +52,31 @@
     	}
     }
     $bal = $bal + $_SESSION['total'];
+    
     $q1="UPDATE vendor SET v_account = ".$bal." WHERE v_id = ".$_SESSION['SESS_MEMBER_ID'];
 	$r=mysqli_query($connect,$q1);
     if (!$r)  
     {  
     	echo "Error fetching data 4: " . mysqli_error($connect);  
     }
-	mysqli_close($connect);
+	
+    $q1="INSERT INTO cust_logs(v_id,c_id,c_price) VALUES(".$_SESSION['SESS_MEMBER_ID'].",'".$_SESSION['cid']."',".$_SESSION['total'].")";
+	$r=mysqli_query($connect,$q1);
+    if (!$r)  
+    {  
+    	echo "Error fetching data 5: " . mysqli_error($connect);  
+    }
+	
+    $q1="INSERT INTO vendor_logs(v_id,c_id,c_price) VALUES(".$_SESSION['SESS_MEMBER_ID'].",'".$_SESSION['cid']."',".$_SESSION['total'].")";
+	$r=mysqli_query($connect,$q1);
+    if (!$r)  
+    {  
+    	echo "Error fetching data 6: " . mysqli_error($connect);  
+    }
+	
+    mysqli_close($connect);
 ?>
 <html>
-	<meta http-equiv="refresh" content="0; URL=vendor_cancel.php">
-	<meta name="keywords" content="automatic redirection">
+<!--	<meta http-equiv="refresh" content="0; URL=vendor_cancel.php">
+	<meta name="keywords" content="automatic redirection">-->
 </html>
