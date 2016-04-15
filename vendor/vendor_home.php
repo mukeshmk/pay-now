@@ -54,98 +54,36 @@
       			</ul>
             </div>
             <!-- /.navbar-collapse -->
-        </nav>		
-    </body> 
-    
-    
-    
-    <?php
-	echo'<br><br>';
-	$connect=mysqli_connect("localhost","root","");
-    if (!$connect) 
-    {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
-    else
-	{
-        mysqli_set_charset($connect, 'utf8');
-        if (!mysqli_select_db($connect, 'paynow')) 
-        { 
-            echo "Unable to locate database."; 
-        }
-    }
-    $result = mysqli_query($connect, "SELECT item_no, item_nm, item_price, v_id FROM item_list where v_id = '" .$_SESSION['SESS_MEMBER_ID']."'");
-    if (!$result)  
-    {  
-    	echo "Error fetching data: " . mysqli_error($connect);  
-    }
-	
-	if(mysqli_num_rows($result) > 0) 
-    {
-		while ($row = mysqli_fetch_array($result))
-    	{
-    		$item_no[] = $row['item_no'];
-    		$item_nm[] = $row['item_nm'];  
-    		$item_price[] = $row['item_price'];
-    		$v_id[] = $row['v_id'];
-    	}
-	
-    ?>
-  
-    
-    
-    
-    	<div class="container">
+        </nav>
+        <br><br><br>
+        <div class="container">            
             <div class="jumbotron">
-                
-            </div>
-			<div class="container">
-	          <div class="row">
-               	<div class="row">
-                <?php 
-						$x=0; 
-						foreach ($item_no as $i_no):
-                    		echo "
-                <div class=\"col-md-3 text-center\" >
-                    <div class=\"box\"\">
-                        <div class=\"box-content\">";        
-                        echo '
-                            <div class=" hero-feature">
-                                <div class="thumbnail">
-                                    <img src="http://placehold.it/800x500" alt="">
-                                    <div class="caption">
-                                        <h3><strong>Item Name: </strong>'.$item_nm[$x].'</h3>
-                                        <p><strong>Price :</strong>'.$item_price[$x].'</p>
-                                        <p>
-                                        <a href="" class="btn btn-primary" onclick="myFunction()">Add to Cart</a> 
-                                        <a href="#" class="btn btn-default">More Info</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <form name="loginform" action="vendor_itemlist.php" method="get">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2" align="center">
+                        <h3>
+                            QR Code:
+                        </h3>
                     </div>
-                </div>';
-                        $x=$x+1; 
-                        endforeach; 
-	}
-	else
-	{
-		echo'<h1 align="center">NO Notes to Display !!</h1>';
-	}
-				?>
-                    
-                </div>           
+                    <div class="col-sm-3">
+                        <input type="text" name="cid" autocomplete="off">
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn">Sign in!</button>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </form>
             </div>
-	   </div>
-    </div>
-    <!-- /.container -->
+        </div>
+    
+    
+    </body> 
+    <script src="../assets/js/jquery-1.11.1.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.backstretch.min.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="fun.js"></script>
 
-        <script src="../assets/js/jquery-1.11.1.min.js"></script>
-        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../assets/js/jquery.backstretch.min.js"></script>
-        <script src="../assets/js/scripts.js"></script>
-<!--    </body>-->
     <style>
         .nav-tabs
         {
@@ -169,5 +107,4 @@
             color:#161616;
         }
     </style>
-
 </html>
