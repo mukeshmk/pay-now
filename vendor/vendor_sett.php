@@ -45,13 +45,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active">
+                    <li>
                         <a href="vendor_home.php">Home</a>
                     </li>
                     <li>
                         <a href="vendor_cart.php">Cart</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="vendor_sett.php">Settings</a>
                     </li>
                 </ul>
@@ -61,34 +61,8 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-        <br><br><br><br>
-        <div class="container">            
-            <div class="jumbotron">
-                <form name="loginform" action="vendor_itemlist.php" method="get">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-2" align="center">
-                        <h3>
-                            QR Code:
-                        </h3>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" name="cid" autocomplete="off">
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="submit" class="btn">Sign in!</button>
-                    </div>
-                    <div class="col-sm-2"></div>
-                </form>
-            </div>
-            <div class="box" align="center">
-                <form method='post' action='vendor_logs.php' align="center" role="form">
-                    <button type='submit' class=' btn btn-primary'>
-				        <span class="glyphicon glyphicon-book"></span>Check Logs 
-                    </button>
-                </form>
-            </div>
-        </div>
-        
+        <br><br><br>
+    
     </body> 
     <script src="../assets/js/jquery-1.11.1.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>

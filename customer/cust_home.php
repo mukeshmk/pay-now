@@ -10,11 +10,17 @@
         <title>Pay Now - Customer</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
+        
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans'>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nixie+One:regular,italic,bold,bolditalic"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+SC:regular,italic,bold,bolditalic"/>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +39,7 @@
     </head>
     <body background="../assets/img/cust_home.jpg">
             <!-- Navigation -->
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -64,6 +70,7 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
+        <br><br><br>
         <div class="container">
             <div class="jumbotron">
                  <div class="clearfix content-heading">
@@ -74,6 +81,16 @@
                     <hr class="visible-xs">
                     <p><strong>PayNow</strong> is a one-stop payment system. It is a centralized payment system for places which require payments at multiple places like job fairs, technology fests, food courts, etc.</p>
                     <p>This service aims at saving time and paper for the vendors and users alike. <br>You just need a mobile phone to get started!</p>
+                </div>
+            </div>
+            <div class="jumbotron">
+                 <div class="clearfix content-heading">
+                    <h2 class="intro-text text-center">What is
+                        <strong>PayNow?</strong>
+                    </h2>
+                    <hr class="visible-xs">
+                    <p><strong>PayNow</strong> is an online transaction system. Money is handed over at a single counter which is then transferred to the your virtual account. If you wish to purchase any service, you need only swipe your phone near the vendor stall and money will be transferred virtually and the service is acquired.
+</p>
                 </div>
             </div>
             <div class="box">

@@ -10,11 +10,16 @@
         <title>Pay Now - Customer</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
+        
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans'>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nixie+One:regular,italic,bold,bolditalic"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+SC:regular,italic,bold,bolditalic"/>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +38,7 @@
     </head>
     <body background="../assets/img/cust_home.jpg">
             <!-- Navigation -->
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -64,6 +69,7 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
+        <br><br><br>
         <div class="container">
             <div class="jumbotron">
                 <div align="center">
@@ -74,10 +80,10 @@
             </div>
             <div class="box">
                 <div align="center">
-                    <img src='"REMOVEMEhttps://api.qrserver.com/v1/create-qr-code/?data=<?php echo $_SESSION['SESS_MEMBER_ID']?>";size=100x100"' alt="" onError="this.src='../assets/img/QR Codes/1.png';" />
+                    <img src='"https://api.qrserver.com/v1/create-qr-code/?data=<?php echo $_SESSION['SESS_MEMBER_ID']?>";size=100x100"' alt="" onError="this.src='../assets/img/QR Codes/1.png';" />
                 </div>
             </div>
-            <div>
+            <div align="center">
                 <form method='post' action='cust_logs.php' align="center" role="form">									
 					<button type='submit' class=' btn btn-primary'>
 						<span class="glyphicon glyphicon-book"></span> Check Logs
@@ -91,7 +97,7 @@
         <script src="../assets/js/jquery.backstretch.min.js"></script>
         <script src="../assets/js/scripts.js"></script>
     </body>
-    <style>
+   <style>
         body 
         {
             background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
@@ -99,12 +105,6 @@
             -moz-background-size: cover;
             background-size: cover;
             -o-background-size: cover;
-        }
-        .box 
-        {
-            margin-bottom: 20px;
-            padding: 30px 15px;
-            background: rgba(225,225,225,0.8);
         }
         .nav-tabs
         {
@@ -127,9 +127,12 @@
             border-radius: 0;
             color:#161616;
         }
-        .footer {
-            color: black;
-            display: block;
-        } 
+        .box 
+        {
+            margin-bottom: 20px;
+            padding: 30px 15px;
+            background: rgba(225,225,225,0.8);
+        }
+ 
     </style>
 </html>

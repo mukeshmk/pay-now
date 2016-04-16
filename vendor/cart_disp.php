@@ -26,6 +26,7 @@
 			<style>
 			table, th, td 
 			{
+                text: solid black
      			border: 1px solid black;
 				white-space:nowrap
 			}
@@ -72,10 +73,8 @@
 		</table>";
 
         echo("<form action='vendor_sell.php' method='get'>
-			<button type='submit' class='btn btn-success'><span class='glyphicon glyphicon-ok-circle'></span> Sell</button>
+			<button type='submit' class='btn btn-success' align='center'><span class='glyphicon glyphicon-ok-circle'></span> Sell</button>
 			</form>");
-
-
         echo"</body>
 		</html>";
 ?>

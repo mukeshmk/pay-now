@@ -10,11 +10,17 @@
         <title>Pay Now - Customer</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
+        
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans'>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nixie+One:regular,italic,bold,bolditalic"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+SC:regular,italic,bold,bolditalic"/>
+    
     
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="../assets/ico/favicon.png">
@@ -57,7 +63,7 @@
             <!-- /.navbar-collapse -->
         </nav>
         <br><br><br>
-        <div class="container box">            
+        <div class="container box" align="center">            
             <?php
                 echo("<br><br><br>");
 	            require"cart_disp.php"
@@ -73,10 +79,16 @@
     <style>
         body 
         {
-            background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
+            background: url('../assets/img/backgrounds/1.png') no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
-            background-size: cover;
+            -o-background-size: cover;
+        }
+        html 
+        {
+            background: url('../assets/img/backgrounds/1.png') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
             -o-background-size: cover;
         }
         .box 

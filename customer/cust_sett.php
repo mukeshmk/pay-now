@@ -10,11 +10,16 @@
         <title>Pay Now - Customer</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
+        
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans'>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nixie+One:regular,italic,bold,bolditalic"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+SC:regular,italic,bold,bolditalic"/>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +38,7 @@
     </head>
     <body>
             <!-- Navigation -->
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -75,7 +80,23 @@
         <script src="../assets/js/jquery.backstretch.min.js"></script>
         <script src="../assets/js/scripts.js"></script>
     </body>
-    <style>
+       <style>
+        body 
+        {
+            background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+        html 
+        {
+            background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
         .nav-tabs
         {
             background-color:#fff;
@@ -97,9 +118,12 @@
             border-radius: 0;
             color:#161616;
         }
-        .footer {
-            color: black;
-            display: block;
-        } 
+        .box 
+        {
+            margin-bottom: 20px;
+            padding: 30px 15px;
+            background: rgba(225,225,225,0.8);
+        }
+ 
     </style>
 </html>
