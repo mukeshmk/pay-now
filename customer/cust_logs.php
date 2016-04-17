@@ -69,9 +69,10 @@
             <!-- /.navbar-collapse -->
         </nav>
         <div class="container">
-           
-            
-            
+           <?php
+                echo("<br><br><br>");
+	            require"log_disp.php"
+            ?>
         </div>
         <!-- Javascript -->
         <script src="../assets/js/jquery-1.11.1.min.js"></script>
