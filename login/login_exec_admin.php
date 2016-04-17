@@ -64,7 +64,7 @@
 			$_SESSION['SESS_LAST_NAME'] = $member['a_pwd'];
 			$_SESSION['SU'] = $member['su'];
 			session_write_close();
-			header("location: ../home.php");
+			header("location: ../admin/admin_home.php");
 			exit();
 		}
 		else 
