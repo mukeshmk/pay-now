@@ -61,6 +61,12 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
+        <div class="container">
+           <?php
+                echo("<br><br><br>");
+	            require"log_disp.php"
+            ?>
+        </div>
         <br><br><br>
     
     </body> 
