@@ -1,13 +1,13 @@
 <?php
 	require_once('../login/auth.php');
 ?>
-<html lang="en">
-
+<html>
     <head>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Pay Now - Customer</title>
+        <title>Pay Now - Vendor</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
@@ -15,21 +15,29 @@
 		<link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
         
-        
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans'>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold"/>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic"/>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nixie+One:regular,italic,bold,bolditalic"/>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+SC:regular,italic,bold,bolditalic"/>
-    
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="../assets/ico/favicon.png">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+
     </head>
     <body>
+            <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -43,16 +51,16 @@
                 <a class="navbar-brand" href="#">PayNow</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="vendor_home.php">Home</a>
+                        <a href="cust_home.php">Home</a>
                     </li>
                     <li>
-                        <a href="vendor_cart.php">Cart</a>
+                        <a href="cust_paynow.php">Pay Now</a>
                     </li>
                     <li class="active">
-                        <a href="vendor_sett.php">Settings</a>
+                        <a href="cust_sett.php">Settings</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -61,65 +69,36 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-        <br><br><br>
-    
-    </body> 
-    <script src="../assets/js/jquery-1.11.1.min.js"></script>
-    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../assets/js/jquery.backstretch.min.js"></script>
-    <script src="../assets/js/scripts.js"></script>
 
-    <style>
-        html 
-        {
-            background: url('../assets/img/backgrounds/1.png') no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover; 
-            -o-background-size: cover;
-            
-        }
-        body
-        {       
-            background: url('../assets/img/backgrounds/1.png') no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;            
-            -o-background-size: cover;
-        }
-            
-        h1, h2, h3, h4, h5, h6
-        {
-            text-align:center;
-	       margin: 0 0 15px 0;
-	       color: #3A4F52;
-	       font-family: 'Alegreya Sans';
-        }
+<?php
+	echo('<br><br><br>');
+	$c_id=$_SESSION['SESS_MEMBER_ID'];
+	$c_unm=$_POST['c_unm'];
+	$c_pwd=$_POST['c_pwd'];
+	$c_email=$_POST['c_email'];
+	
+	$connect=mysqli_connect("localhost","root","");
+	if (mysqli_connect_errno()) 
+	{
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
 
-        .box 
-        {
-            margin-bottom: 20px;
-            padding: 30px 15px;
-            background: rgba(225,225,225,0.8);
-        }
-        .nav-tabs
-        {
-            background-color:#fff;
-        }
-        .tab-content
-        {
-            background-color:#fff;
-            color:#fff;
-            padding:5px
-        }
-        .nav-tabs > li > a
-        {
-            border: medium none;
-        }
-        .nav-tabs > li > a:hover
-        {
-            background-color: #fff !important;
-            border: medium none;
-            border-radius: 0;
-            color:#161616;
-        }
-    </style>
+	$c="USE paynow;";
+	$c1=mysqli_query($connect,$c);
+
+	$q1="UPDATE customer SET c_id='$c_id',c_unm='$c_unm', c_pwd='$c_pwd', c_email='$c_email'
+		WHERE c_id=$c_id;";	
+	if(!mysqli_query($connect,$q1))
+	{
+		echo("Error description 1: " . mysqli_error($connect));
+		echo('<br><br>');
+	}
+	echo("<br><br><br>");
+	mysqli_close($connect);
+?>
+    </body>
+</html>
+<html>
+	<meta http-equiv="refresh" content="0; URL=vendor_home.php">
+	<meta name="keywords" content="automatic redirection">
 </html>
