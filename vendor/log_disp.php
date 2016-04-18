@@ -60,9 +60,14 @@
         </tbody>
 		</table>";
 
-        echo("<form action='vendor_home.php' method='get'>
-			<button type='submit' class='btn btn-success' align='center'><span class='glyphicon glyphicon-ok-sunglasses'></span> Okay</button>
-			</form>");
+        echo("
+            <div align='center'>
+            <form action='vendor_home.php' method='get'>
+			    <button type='submit' class='btn btn-success' align='center'>
+                    <span class='glyphicon glyphicon-ok-sunglasses'></span> Okay
+                </button>
+			</form>
+            </div>");
         echo"</body>
 		</html>";
 ?>
