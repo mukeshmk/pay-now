@@ -62,7 +62,95 @@
             <!-- /.navbar-collapse -->
         </nav>
         <br><br><br>
-    
+        <div class="container">
+<?php
+	$v_id=$_SESSION['SESS_MEMBER_ID'];
+	
+	$connect=mysqli_connect("localhost","root","");
+	if (mysqli_connect_errno()) 
+	{
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
+
+	$c="USE paynow;";
+	$c1=mysqli_query($connect,$c);
+
+	$q1="SELECT v_unm, v_pwd, v_name, v_shop FROM vendor WHERE v_id=$v_id;";	
+	$result = $connect->query($q1);
+	$row=$result->fetch_assoc();
+
+	$v_unm=$row['v_unm'];
+	$v_pwd=$row['v_pwd'];
+	$v_name=$row['v_name'];
+	$v_shop=$row['v_shop'];
+
+	if(!mysqli_query($connect,$q1))
+	{
+		echo("Error description 1: " . mysqli_error($connect));
+		echo('<br><br>');
+	}
+
+	echo("<br><br><br><br><br>");
+	mysqli_close($connect);
+	echo'
+	<h1 align="center">Edit these fields:</h1>';
+?>
+            
+
+        <form action="update_vendor.php" method="post" autocomplete="off" id="note_update">
+			<table style="width:0%" align="center">
+			<tr>
+				
+			<td>
+			<table style="width:0%" align="center" class="table table-bordered table-hover table-condensed">
+				<tr>
+					<td>Vendor-ID: </td>
+					<td><input type="text" name="v_id" disabled value="<?php echo $v_id; ?>"></td>
+				</tr>
+				<tr>
+					<td>User-Name</td>
+					<td><input type="text" name="v_unm" value="<?php echo $v_unm; ?>"</td>
+				</tr>
+                <tr>
+					<td>Shop-Name</td>
+					<td><input type="text" name="v_name" value="<?php echo $v_name; ?>"</td>
+				</tr>
+			</table>
+			</td>			
+			<td>
+			<table style="width:0%" align="right" class="table table-bordered table-hover table-condensed">
+				<tr>
+					<td>E-Mail: </td>						
+					<td><input type="text" name="v_shop" required value="<?php echo $v_shop; ?>"></td>
+				</tr>
+				<tr>
+					<td>Password: </td>						
+					<td><input type="text" name="v_pwd" required value="<?php echo $v_pwd; ?>"></td>
+				</tr>
+                <tr>
+					<td></td>						
+					<td><input type="text" name="v_pwd" disabled value=""></td>
+				</tr>
+			</table>
+			</td>
+			</tr>
+			</table>
+			<div class="row"></div>
+			<div class="row">
+				<div class="col-sm-5"></div>
+				<div class="col-sm-1">
+					<button type="submit" class="btn btn-info">
+						<span class="glyphicon glyphicon-plus-sign"></span> Update
+					</button>	
+				</div>
+				<div class="col-sm-6"></div>
+			</div>
+        </form>
+            
+            
+            
+        </div>
+            
     </body> 
     <script src="../assets/js/jquery-1.11.1.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>

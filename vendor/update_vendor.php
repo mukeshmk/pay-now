@@ -72,10 +72,11 @@
 
 <?php
 	echo('<br><br><br>');
-	$c_id=$_SESSION['SESS_MEMBER_ID'];
-	$c_unm=$_POST['c_unm'];
-	$c_pwd=$_POST['c_pwd'];
-	$c_email=$_POST['c_email'];
+	$v_id=$_SESSION['SESS_MEMBER_ID'];
+	$v_unm=$_POST['v_unm'];
+	$v_pwd=$_POST['v_pwd'];
+	$v_shop=$_POST['v_shop'];
+	$v_name=$_POST['v_name'];
 	
 	$connect=mysqli_connect("localhost","root","");
 	if (mysqli_connect_errno()) 
@@ -86,8 +87,8 @@
 	$c="USE paynow;";
 	$c1=mysqli_query($connect,$c);
 
-	$q1="UPDATE customer SET c_id='$c_id',c_unm='$c_unm', c_pwd='$c_pwd', c_email='$c_email'
-		WHERE c_id=$c_id;";	
+	$q1="UPDATE vendor SET v_unm='$v_unm', v_pwd='$v_pwd', v_shop='$v_shop', v_name='$v_name'
+		WHERE v_id=$v_id;";	
 	if(!mysqli_query($connect,$q1))
 	{
 		echo("Error description 1: " . mysqli_error($connect));
