@@ -32,7 +32,10 @@
     }
     if($_SESSION['total']>$bal && $bal > 0)
     {
-        echo "not enough funds";
+        echo '
+        <script>
+            alert("Insufficient Funds !!");
+        </script>';
     }
     else
     {
