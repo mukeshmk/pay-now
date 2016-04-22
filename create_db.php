@@ -27,6 +27,7 @@
   		v_pwd VARCHAR(20) DEFAULT 'default',
   		v_name VARCHAR(30) NOT NULL,
         v_shop VARCHAR(30) NOT NULL,
+        v_email VARCHAR(30) NOT NULL,
   		v_account INT DEFAULT 0 CHECK(v_account >= 0),
         v_active INT DEFAULT 1 CHECK(v_active IN (0,1)),
   		CONSTRAINT pk2a  PRIMARY KEY(v_id),
