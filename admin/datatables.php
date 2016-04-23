@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+<?php
+	require_once('../login/auth.php');
+?>
 <html lang="en">
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Miminium Admin Template v.1">
+  <meta name="description" content="PayNow - Admin Admin Template v.1">
   <meta name="author" content="Isna Nur Azis">
   <meta name="keyword" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Miminium</title>
+  <title>PayNow - Admin</title>
 
   <!-- start: Css -->
   <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
@@ -38,8 +40,8 @@
                 <span class="bottom"></span>
               </div>
 
-                <a href="index.html" class="navbar-brand">
-                 <b>MIMIN</b>
+                <a href="admin_home.php" class="navbar-brand">
+                 <b>Pay Now</b>
                 </a>
 
                 <div class="container">
@@ -67,7 +69,7 @@
                         <p class="animated fadeInRight">Sat,October 1st 2029</p>
                       </li>
                       <li class="active ripple">
-                        <a class="tree-toggle nav-header" href="index.html"><span class="fa-home fa"></span> Dashboard
+                        <a class="tree-toggle nav-header" href="admin_home.php"><span class="fa-home fa"></span> Dashboard
                           <span class="fa-angle-right fa right-arrow text-right"></span>
                         </a>
                       </li>
@@ -77,9 +79,9 @@
                           <span class="fa-angle-right fa right-arrow text-right"></span>
                         </a>
                         <ul class="nav nav-list tree">
-                          <li><a href="Wizard.html">Account creation</a></li>
-                          <li><a href="itemadd.html">Item addition</a></li>
-                          <li><a href="tablestatic.html">Deactivate</a></li>
+                          <li><a href="wizard.php">Account creation</a></li>
+                          <li><a href="itemadd.php">Item addition</a></li>
+                          <li><a href="tablestatic.php">Deactivate</a></li>
                         </ul>
                       </li>
                       <li class="ripple">
@@ -88,8 +90,8 @@
                           <span class="fa-angle-right fa right-arrow text-right"></span>
                         </a>
                         <ul class="nav nav-list tree">
-                          <li><a href="addmoney.html">Add Money</a></li>
-                          <li><a href="tablestatic.html">Deactivate Account</a></li>
+                          <li><a href="addmoney.php">Add Money</a></li>
+                          <li><a href="tablestatic.php">Deactivate Account</a></li>
                         </ul>
                       </li>
                     </ul>

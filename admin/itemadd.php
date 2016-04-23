@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+<?php
+	require_once('../login/auth.php');
+?>
 <html lang="en">
 <head>
 
 	<meta charset="utf-8">
-	<meta name="description" content="Miminium Admin Template v.1">
+	<meta name="description" content="PayNow - Admin Admin Template v.1">
 	<meta name="author" content="Isna Nur Azis">
 	<meta name="keyword" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Miminium</title>
+  <title>PayNow - Admin</title>
 
   <!-- start: Css -->
   <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
@@ -39,8 +41,8 @@
 						<span class="bottom"></span>
 					</div>
 
-						<a href="index.html" class="navbar-brand">
-						 <b>MIMIN</b>
+						<a href="admin_home.php" class="navbar-brand">
+						 <b>Pay Now</b>
 						</a>
 
 						<div class="container">
@@ -68,7 +70,7 @@
 										<p class="animated fadeInRight">Sat,October 1st 2029</p>
 									</li>
 									<li class="active ripple">
-										<a class="tree-toggle nav-header" href="index.html"><span class="fa-home fa"></span> Dashboard
+										<a class="tree-toggle nav-header" href="admin_home.php"><span class="fa-home fa"></span> Dashboard
 											<span class="fa-angle-right fa right-arrow text-right"></span>
 										</a>
 									</li>
@@ -78,9 +80,9 @@
 											<span class="fa-angle-right fa right-arrow text-right"></span>
 										</a>
 										<ul class="nav nav-list tree">
-											<li><a href="Wizard.html">Account creation</a></li>
-											<li><a href="itemadd.html">Item addition</a></li>
-											<li><a href="tablestatic.html">Deactivate</a></li>
+											<li><a href="wizard.php">Account creation</a></li>
+											<li><a href="itemadd.php">Item addition</a></li>
+											<li><a href="tablestatic.php">Deactivate</a></li>
 										</ul>
 									</li>
 									<li class="ripple">
@@ -89,8 +91,8 @@
 											<span class="fa-angle-right fa right-arrow text-right"></span>
 										</a>
 										<ul class="nav nav-list tree">
-											<li><a href="addmoney.html">Add Money</a></li>
-											<li><a href="tablestatic.html">Deactivate Account</a></li>
+											<li><a href="addmoney.php">Add Money</a></li>
+											<li><a href="tablestatic.php">Deactivate Account</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -102,9 +104,9 @@
              <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Account Creation</h3>
+                        <h3 class="animated fadeInLeft">Add Items</h3>
                         <p class="animated fadeInDown">
-                          Vendor <span class="fa-angle-right fa"></span> Account Creation Wizard
+                          Vendor <span class="fa-angle-right fa"></span> Add Items Wizard
                         </p>
                     </div>
                   </div>
@@ -116,14 +118,12 @@
                         <form id="example1" action="#">
                             <h3>Account</h3>
                             <fieldset>
-                                <legend>Account Information</legend>
+                                <legend>Vendor Login</legend>
 
                                 <label for="unm">User name *</label>
                                 <input id="unm" name="unm" type="text" class="required">
                                 <label for="pwd">Password *</label>
                                 <input id="pwd" name="pwd" type="password" class="required">
-                                <label for="confirm-2">Confirm Password *</label>
-                                <input id="confirm-2" name="confirm" type="password" class="required">
                                 <p>(*) Mandatory</p>
                             </fieldset>
 
@@ -131,12 +131,12 @@
                             <fieldset>
                                 <legend>Profile Information</legend>
 
-                                <label for="name-2">First name *</label>
+                                <label for="name-2">Shop name *</label>
                                 <input id="name-2" name="name" type="text" class="required">
-                                <label for="surname-2">Last name *</label>
-                                <input id="surname-2" name="surname" type="text" class="required">
-                                <label for="email-2">Email *</label>
-                                <input id="email-2" name="email" type="text" class="required email">
+                                <label for="item_nm">Item name *</label>
+                                <input id="item_nm" name="item_nm" type="text" class="required">
+                                <label for="item_price">Item Price *</label>
+                                <input id="item_price" name="item_price" type="text" class="required">
                                 <p>(*) Mandatory</p>
                             </fieldset>
                             <h3>Finish</h3>
@@ -188,11 +188,6 @@
             {
                 return true;
             }
-            // Forbid next action on "Warning" step if the user is to young
-            if (newIndex === 3 && Number($("#age-2").val()) < 18)
-            {
-                return false;
-            }
             // Needed in some cases if the user went back (clean up)
             if (currentIndex < newIndex)
             {
@@ -223,8 +218,8 @@
         },
         onFinished: function (event, currentIndex)
         {
-            alert("Account Created!");
-						window.location.href = "datatables.html";
+            alert("Item Added!");
+						window.location.href = "productgrid.php";
         }
     }).validate({
         errorPlacement: function errorPlacement(error, element) { element.before(error); },
