@@ -75,7 +75,7 @@
 	$c="USE paynow;";
 	$c1=mysqli_query($connect,$c);
 
-	$q1="SELECT v_unm, v_pwd, v_name, v_shop FROM vendor WHERE v_id=$v_id;";	
+	$q1="SELECT v_unm, v_pwd, v_name, v_shop, v_email FROM vendor WHERE v_id=$v_id;";	
 	$result = $connect->query($q1);
 	$row=$result->fetch_assoc();
 
@@ -83,6 +83,7 @@
 	$v_pwd=$row['v_pwd'];
 	$v_name=$row['v_name'];
 	$v_shop=$row['v_shop'];
+	$v_email=$row['v_email'];
 
 	if(!mysqli_query($connect,$q1))
 	{
@@ -128,8 +129,8 @@
 					<td><input type="text" name="v_pwd" required value="<?php echo $v_pwd; ?>"></td>
 				</tr>
                 <tr>
-					<td></td>						
-					<td><input type="text" name="v_pwd" disabled value=""></td>
+					<td>E-Mail</td>						
+					<td><input type="text" name="v_email" required value="<?php echo $v_email; ?>"></td>
 				</tr>
 			</table>
 			</td>

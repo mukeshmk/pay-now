@@ -77,6 +77,7 @@
 	$v_pwd=$_POST['v_pwd'];
 	$v_shop=$_POST['v_shop'];
 	$v_name=$_POST['v_name'];
+	$v_email=$_POST['v_email'];
 	
 	$connect=mysqli_connect("localhost","root","");
 	if (mysqli_connect_errno()) 
@@ -87,7 +88,7 @@
 	$c="USE paynow;";
 	$c1=mysqli_query($connect,$c);
 
-	$q1="UPDATE vendor SET v_unm='$v_unm', v_pwd='$v_pwd', v_shop='$v_shop', v_name='$v_name'
+	$q1="UPDATE vendor SET v_unm='$v_unm', v_pwd='$v_pwd', v_shop='$v_shop', v_name='$v_name', v_email='$v_email'
 		WHERE v_id=$v_id;";	
 	if(!mysqli_query($connect,$q1))
 	{
