@@ -2,6 +2,77 @@
 	require_once('../login/auth.php');
 ?>
 <html lang="en">
+<?php
+	$a_id=$_SESSION['SESS_MEMBER_ID'];
+	
+	$connect=mysqli_connect("localhost","root","");
+	if (mysqli_connect_errno()) 
+	{
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
+
+	$c="USE paynow;";
+	$c1=mysqli_query($connect,$c);
+
+	$q1="SELECT a_nm FROM admins WHERE admin_id=$a_id;";	
+	$result = $connect->query($q1);
+	$row=$result->fetch_assoc();
+
+	$a_nm=$row['a_nm'];
+	
+	if(!mysqli_query($connect,$q1))
+	{
+		echo("Error description 1: " . mysqli_error($connect));
+		echo('<br><br>');
+	}
+    
+    $q1="SELECT COUNT(c_id) FROM customer";	
+	$result = $connect->query($q1);
+	$row=$result->fetch_assoc();
+
+	$count_c=$row['COUNT(c_id)'];
+	
+	if(!mysqli_query($connect,$q1))
+	{
+		echo("Error description 1: " . mysqli_error($connect));
+		echo('<br><br>');
+	}
+    
+    $q1="SELECT COUNT(v_id) FROM vendor";	
+	$result = $connect->query($q1);
+	$row=$result->fetch_assoc();
+
+	$count_v=$row['COUNT(v_id)'];
+	
+	if(!mysqli_query($connect,$q1))
+	{
+		echo("Error description 1: " . mysqli_error($connect));
+		echo('<br><br>');
+	}
+    
+    $q1="SELECT SUM(c_account) FROM customer";	
+	$result = $connect->query($q1);
+	$row=$result->fetch_assoc();
+
+	$c_money=$row['SUM(c_account)'];
+	
+	if(!mysqli_query($connect,$q1))
+	{
+		echo("Error description 1: " . mysqli_error($connect));
+		echo('<br><br>');
+	}
+    $q1="SELECT SUM(v_account) FROM vendor";	
+	$result = $connect->query($q1);
+	$row=$result->fetch_assoc();
+
+	$v_money=$row['SUM(v_account)'];
+	
+	if(!mysqli_query($connect,$q1))
+	{
+		echo("Error description 1: " . mysqli_error($connect));
+		echo('<br><br>');
+	}
+?>    
 <head>
 
 	<meta charset="utf-8">
@@ -26,13 +97,12 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-
+  </head>    
  <body id="mimin" class="dashboard">
       <!-- start: Header -->
 			<nav class="navbar navbar-default header navbar-fixed-top">
           <div class="col-md-12 nav-wrapper">
-						<div class="navbar-header" style="width:100%;">
+              <div class="navbar-header" style="width:100%;">
               <div class="opener-left-menu is-open">
                 <span class="top"></span>
                 <span class="middle"></span>
@@ -43,9 +113,9 @@
                  <b>Pay Now</b>
                 </a>
 
-								<div class="container">
+            <div class="container">
               <ul class="nav navbar-nav navbar-right user-nav">
-                <li class="user-name"><span>Akihiko Avaron</span></li>
+                <li class="user-name"><span><?php echo $a_nm ?></span></li>
                   <li class="dropdown avatar-dropdown">
                    <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                 </li>
@@ -123,8 +193,8 @@
                                         </div>
                                       </div>
                                       <div class="panel-body text-center">
-                                        <h1>51181,320</h1>
-                                        <p>User active</p>
+                                        <h1><?php echo $count_c; ?></h1>
+                                        <p>Active Users</p>
                                         <hr/>
                                       </div>
                                     </div>
@@ -142,7 +212,7 @@
                                         </div>
                                       </div>
                                       <div class="panel-body text-center">
-                                        <h1>51181,320</h1>
+                                        <h1><?php echo $count_v; ?></h1>
                                         <p>New Shops</p>
                                         <hr/>
                                       </div>
@@ -152,7 +222,7 @@
 																	<div class="panel box-v1">
 																		<div class="panel-heading bg-white border-none">
 																			<div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-																				<h4 class="text-left">Money from Users</h4>
+																				<h4 class="text-left">Money with Users</h4>
 																			</div>
 																			<div class="col-md-6 col-sm-6 col-xs-6 text-right">
 																				 <h4>
@@ -161,7 +231,7 @@
 																			</div>
 																		</div>
 																		<div class="panel-body text-center">
-																			<h1>51181,320</h1>
+																			<h1><?php echo $c_money; ?></h1>
 																			<p>Rs.</p>
 																			<hr/>
 																		</div>
@@ -180,7 +250,7 @@
 																			</div>
 																		</div>
 																		<div class="panel-body text-center">
-																			<h1>51181,320</h1>
+																			<h1><?php echo $v_money; ?></h1>
 																			<p>Rs.</p>
 																			<hr/>
 																		</div>
