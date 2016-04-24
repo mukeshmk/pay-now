@@ -1,6 +1,7 @@
 <?php
 	require_once('../login/auth.php');
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 

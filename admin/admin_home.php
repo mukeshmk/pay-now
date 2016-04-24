@@ -1,6 +1,7 @@
 <?php
 	require_once('../login/auth.php');
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <?php
 	$a_id=$_SESSION['SESS_MEMBER_ID'];
@@ -10,14 +11,11 @@
 	{
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
-
 	$c="USE paynow;";
 	$c1=mysqli_query($connect,$c);
-
 	$q1="SELECT a_nm FROM admins WHERE admin_id=$a_id;";	
 	$result = $connect->query($q1);
 	$row=$result->fetch_assoc();
-
 	$a_nm=$row['a_nm'];
 	
 	if(!mysqli_query($connect,$q1))
@@ -29,7 +27,6 @@
     $q1="SELECT COUNT(c_id) FROM customer";	
 	$result = $connect->query($q1);
 	$row=$result->fetch_assoc();
-
 	$count_c=$row['COUNT(c_id)'];
 	
 	if(!mysqli_query($connect,$q1))
@@ -41,7 +38,6 @@
     $q1="SELECT COUNT(v_id) FROM vendor";	
 	$result = $connect->query($q1);
 	$row=$result->fetch_assoc();
-
 	$count_v=$row['COUNT(v_id)'];
 	
 	if(!mysqli_query($connect,$q1))
@@ -53,7 +49,6 @@
     $q1="SELECT SUM(c_account) FROM customer";	
 	$result = $connect->query($q1);
 	$row=$result->fetch_assoc();
-
 	$c_money=$row['SUM(c_account)'];
 	
 	if(!mysqli_query($connect,$q1))
@@ -64,7 +59,6 @@
     $q1="SELECT SUM(v_account) FROM vendor";	
 	$result = $connect->query($q1);
 	$row=$result->fetch_assoc();
-
 	$v_money=$row['SUM(v_account)'];
 	
 	if(!mysqli_query($connect,$q1))
