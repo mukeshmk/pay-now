@@ -109,11 +109,11 @@
 					<td><input type="text" name="v_id" disabled value="<?php echo $v_id; ?>"></td>
 				</tr>
 				<tr>
-					<td>User-Name</td>
+					<td>User-Name: </td>
 					<td><input type="text" name="v_unm" value="<?php echo $v_unm; ?>"</td>
 				</tr>
                 <tr>
-					<td>Shop-Name</td>
+					<td>Vendor-Name: </td>
 					<td><input type="text" name="v_name" value="<?php echo $v_name; ?>"</td>
 				</tr>
 			</table>
@@ -121,7 +121,7 @@
 			<td>
 			<table style="width:0%" align="right" class="table table-bordered table-hover table-condensed">
 				<tr>
-					<td>E-Mail: </td>						
+					<td>Shop-Name: </td>						
 					<td><input type="text" name="v_shop" required value="<?php echo $v_shop; ?>"></td>
 				</tr>
 				<tr>
@@ -129,7 +129,7 @@
 					<td><input type="text" name="v_pwd" required value="<?php echo $v_pwd; ?>"></td>
 				</tr>
                 <tr>
-					<td>E-Mail</td>						
+					<td>E-Mail: </td>						
 					<td><input type="text" name="v_email" required value="<?php echo $v_email; ?>"></td>
 				</tr>
 			</table>
