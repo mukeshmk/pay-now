@@ -65,7 +65,7 @@
 
         echo("
             <div align='center'>
-            <form action='vendor_home.php' method='get'>
+            <form action='cust_home.php' method='get'>
 			    <button type='submit' class='btn btn-success' align='center'>
                     <span class='glyphicon glyphicon-ok-sunglasses'></span> Okay
                 </button>
