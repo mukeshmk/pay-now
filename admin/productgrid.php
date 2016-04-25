@@ -88,12 +88,15 @@
                 <h1 class="animated fadeInLeft">21:00</h1>
                 <p class="animated fadeInRight">Sat,October 1st 2029</p>
               </li>
-              <li class="active ripple">
+              <li class="ripple">
                 <a class="tree-toggle nav-header" href="admin_home.php"><span class="fa-home fa"></span> Dashboard
                   <span class="fa-angle-right fa right-arrow text-right"></span>
                 </a>
+                <ul class="nav nav-list tree">
+                    <li><a href="admin_home.php">Home</a></li>
+				</ul>
               </li>
-              <li class="ripple">
+              <li class="active ripple">
                 <a class="tree-toggle nav-header">
                   <span class="fa-diamond fa"></span> Vendor
                   <span class="fa-angle-right fa right-arrow text-right"></span>
