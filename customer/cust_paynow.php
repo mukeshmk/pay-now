@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
-        
+
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans'>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold"/>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic"/>
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div align="center">
-                <form method='post' action='cust_logs.php' align="center" role="form">									
+                <form method='post' action='cust_logs.php' align="center" role="form">
 					<button type='submit' class=' btn btn-primary'>
 						<span class="glyphicon glyphicon-book"></span> Check Logs
                     </button>
@@ -98,7 +98,7 @@
         <script src="../assets/js/scripts.js"></script>
     </body>
    <style>
-        body 
+        body
         {
             background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -127,12 +127,12 @@
             border-radius: 0;
             color:#161616;
         }
-        .box 
+        .box
         {
             margin-bottom: 20px;
             padding: 30px 15px;
             background: rgba(225,225,225,0.8);
         }
- 
+
     </style>
 </html>

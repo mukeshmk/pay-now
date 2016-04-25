@@ -69,10 +69,12 @@
             <!-- /.navbar-collapse -->
         </nav>
         <div class="container">
+					<div class="jumbotron">
            <?php
                 echo("<br><br><br>");
 	            require"log_disp.php"
             ?>
+					</div>
         </div>
         <!-- Javascript -->
         <script src="../assets/js/jquery-1.11.1.min.js"></script>
@@ -81,7 +83,7 @@
         <script src="../assets/js/scripts.js"></script>
     </body>
     <style>
-        body 
+        body
         {
             background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -89,7 +91,7 @@
             background-size: cover;
             -o-background-size: cover;
         }
-        html 
+        html
         {
             background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -118,12 +120,12 @@
             border-radius: 0;
             color:#161616;
         }
-        .box 
+        .box
         {
             margin-bottom: 20px;
             padding: 30px 15px;
             background: rgba(225,225,225,0.8);
         }
- 
+
     </style>
 </html>
