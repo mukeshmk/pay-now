@@ -66,7 +66,7 @@
                 <a href="admin_home.php" class="navbar-brand">
                  <b>MIMIN</b>
                 </a>
-
+                <li><a href='../index.php'><span class="glyphicon glyphicon-off"></span></a></li>
                 <div class="container">
               <ul class="nav navbar-nav navbar-right user-nav">
                 <li class="user-name"><span><?php echo $a_nm; ?></span></li>

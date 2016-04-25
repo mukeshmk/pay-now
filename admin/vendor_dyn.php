@@ -82,7 +82,7 @@
                   <li class="dropdown avatar-dropdown">
                    <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                 </li>
-
+                  <li><a href='../index.php'><span class="glyphicon glyphicon-off"></span></a></li>
               </ul>
             </div>
           </div>
@@ -136,9 +136,9 @@
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Data Tables</h3>
+                        <h3 class="animated fadeInLeft">Vendor Details</h3>
                         <p class="animated fadeInDown">
-                          Table <span class="fa-angle-right fa"></span> Data Tables
+                          Table <span class="fa-angle-right fa"></span> Vendor Table
                         </p>
                     </div>
                   </div>
@@ -146,7 +146,7 @@
               <div class="col-md-12 top-20 padding-0">
                 <div class="col-md-12">
                   <div class="panel">
-                    <div class="panel-heading"><h3>Data Tables</h3></div>
+                    <div class="panel-heading"><h3>Vendor Table</h3></div>
                     <div class="panel-body">
                       <div class="responsive-table">
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">

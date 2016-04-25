@@ -113,7 +113,7 @@
                   <li class="dropdown avatar-dropdown">
                    <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                 </li>
-
+                  <li><a href='../index.php'><span class="glyphicon glyphicon-off"></span></a></li>
               </ul>
             </div>
           </div>
@@ -132,6 +132,9 @@
 								<a class="tree-toggle nav-header" href="admin_home.php"><span class="fa-home fa"></span> Dashboard
 									<span class="fa-angle-right fa right-arrow text-right"></span>
 								</a>
+                                <ul class="nav nav-list tree">
+									<li><a href="admin_home.php">Home</a></li>
+								</ul>
 							</li>
 							<li class="ripple">
 								<a class="tree-toggle nav-header">

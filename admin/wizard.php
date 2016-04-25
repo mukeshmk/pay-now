@@ -73,7 +73,7 @@
 							<li class="dropdown avatar-dropdown">
 							 <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
 						</li>
-
+<li><a href='../index.php'><span class="glyphicon glyphicon-off"></span></a></li>
 					</ul>
 				</div>
 			</div>
