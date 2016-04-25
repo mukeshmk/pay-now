@@ -80,7 +80,7 @@
                 <ul class="nav nav-list tree">
                   <li><a href="wizard.php">Account creation</a></li>
                   <li><a href="itemadd.php">Item addition</a></li>
-                  <li><a href="tablestatic.php">Deactivate</a></li>
+                  <li><a href="vendor_table.php">Deactivate</a></li>
                 </ul>
               </li>
               <li class="ripple">
@@ -90,7 +90,7 @@
                 </a>
                 <ul class="nav nav-list tree">
                   <li><a href="addmoney.php">Add Money</a></li>
-                  <li><a href="tablestatic.php">Deactivate Account</a></li>
+                  <li><a href="cust_table.php">Deactivate Account</a></li>
                 </ul>
               </li>
             </ul>
