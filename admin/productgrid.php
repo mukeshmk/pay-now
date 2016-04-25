@@ -137,24 +137,12 @@
                   <div class="row">
                     <div class="col-sm-6 col-md-3 product-grid">
                       <div class="thumbnail">
-                        <div class="product-location">
-                          <span class="fa-map-marker fa"></span> Banyumas
-                          </div>
                         <div class="product-price product-price-bottom">
                           <h4>$1,716</h4>
                         </div>
                         <img src="holder.js/250x250" alt="...">
                         <div class="caption">
-                          <small>Category</small>
-                          <small class="pull-right">
-                            <span class="rate fa-star fa"></span>
-                            <span class="rate fa-star fa"></span>
-                            <span class="rate fa-star fa"></span>
-                            <span class="rate fa-star fa"></span>
-                            <span class="rate fa-star-half fa"></span>
-                          </small>
                           <h4>Product Name</h4>
-                          <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis.</p>
                           <p><a href="#" class="btn btn-primary" role="button">Buy</a></p>
                         </div>
                       </div>
