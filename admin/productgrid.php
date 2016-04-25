@@ -4,19 +4,19 @@
 <!DOCTYPE html>
 <?php
 	$a_id=$_SESSION['SESS_MEMBER_ID'];
-	
+
 	$connect=mysqli_connect("localhost","root","");
-	if (mysqli_connect_errno()) 
+	if (mysqli_connect_errno())
 	{
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 	$c="USE paynow;";
 	$c1=mysqli_query($connect,$c);
-	$q1="SELECT a_nm FROM admins WHERE admin_id=$a_id;";	
+	$q1="SELECT a_nm FROM admins WHERE admin_id=$a_id;";
 	$result = $connect->query($q1);
 	$row=$result->fetch_assoc();
 	$a_nm=$row['a_nm'];
-	
+
 	if(!mysqli_query($connect,$q1))
 	{
 		echo("Error description 1: " . mysqli_error($connect));
@@ -138,12 +138,11 @@
                     <div class="col-sm-6 col-md-3 product-grid">
                       <div class="thumbnail">
                         <div class="product-price product-price-bottom">
-                          <h4>$1,716</h4>
+                          <h4>Rs.1234</h4>
                         </div>
                         <img src="holder.js/250x250" alt="...">
                         <div class="caption">
-                          <h4>Product Name</h4>
-                          <p><a href="#" class="btn btn-primary" role="button">Buy</a></p>
+                          <h4>Harry Potter</h4>
                         </div>
                       </div>
                     </div>
