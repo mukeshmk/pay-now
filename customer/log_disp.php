@@ -35,7 +35,7 @@
 		<body>";
 
 	echo "
-		<div class="jumbotron">
+		<div class='jumbotron'>
         <table align = 'center' width='0%' class='table table-condensed table-hover table-bordered'>
             <thead>
                 <tr>

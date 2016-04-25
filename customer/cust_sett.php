@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
-        
+
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans'>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold"/>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic"/>
@@ -70,13 +70,13 @@
             <!-- /.navbar-collapse -->
         </nav>
         <div class="container">
-           
+
 
 <?php
 	$c_id=$_SESSION['SESS_MEMBER_ID'];
-	
+
 	$connect=mysqli_connect("localhost","root","");
-	if (mysqli_connect_errno()) 
+	if (mysqli_connect_errno())
 	{
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
@@ -84,7 +84,7 @@
 	$c="USE paynow;";
 	$c1=mysqli_query($connect,$c);
 
-	$q1="SELECT c_email, c_unm, c_pwd FROM customer WHERE c_id=$c_id;";	
+	$q1="SELECT c_email, c_unm, c_pwd FROM customer WHERE c_id=$c_id;";
 	$result = $connect->query($q1);
 	$row=$result->fetch_assoc();
 
@@ -103,12 +103,12 @@
 	echo'
 	<h1 align="center">Edit these fields:</h1>';
 ?>
-            
 
+		<div class="jumbotron">
         <form action="update_cust.php" method="post" autocomplete="off" id="note_update">
 			<table style="width:0%" align="center">
 			<tr>
-				
+
 			<td>
 			<table style="width:0%" align="center" class="table table-bordered table-hover table-condensed">
 				<tr>
@@ -120,15 +120,15 @@
 					<td><input type="text" name="c_unm" value="<?php echo $c_unm; ?>"</td>
 				</tr>
 			</table>
-			</td>			
+			</td>
 			<td>
 			<table style="width:0%" align="right" class="table table-bordered table-hover table-condensed">
 				<tr>
-					<td>E-Mail: </td>						
+					<td>E-Mail: </td>
 					<td><input type="text" name="c_email" required value="<?php echo $c_email; ?>"></td>
 				</tr>
 				<tr>
-					<td>Password: </td>						
+					<td>Password: </td>
 					<td><input type="text" name="c_pwd" required value="<?php echo $c_pwd; ?>"></td>
 				</tr>
 			</table>
@@ -141,14 +141,15 @@
 				<div class="col-sm-1">
 					<button type="submit" class="btn btn-info">
 						<span class="glyphicon glyphicon-plus-sign"></span> Update
-					</button>	
+					</button>
 				</div>
 				<div class="col-sm-6"></div>
 			</div>
         </form>
-            
-            
-            
+			</div>
+
+
+
         </div>
         <!-- Javascript -->
         <script src="../assets/js/jquery-1.11.1.min.js"></script>
@@ -157,7 +158,7 @@
         <script src="../assets/js/scripts.js"></script>
     </body>
        <style>
-        body 
+        body
         {
             background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -165,7 +166,7 @@
             background-size: cover;
             -o-background-size: cover;
         }
-        html 
+        html
         {
             background: url('../assets/img/cust_home.jpg') no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -194,12 +195,12 @@
             border-radius: 0;
             color:#161616;
         }
-        .box 
+        .box
         {
             margin-bottom: 20px;
             padding: 30px 15px;
             background: rgba(225,225,225,0.8);
         }
- 
+
     </style>
 </html>
