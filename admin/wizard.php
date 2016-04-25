@@ -227,7 +227,7 @@
         onFinished: function (event, currentIndex)
         {
             alert("Account Created!");
-						window.location.href = "datatables.php";
+						window.location.href = "vendor_dyn.php";
         }
     }).validate({
         errorPlacement: function errorPlacement(error, element) { element.before(error); },

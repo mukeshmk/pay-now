@@ -216,7 +216,7 @@
         onFinished: function (event, currentIndex)
         {
             alert("Money Added!");
-						window.location.href = "datatables.php";
+						window.location.href = "cust_dyn.php";
         }
     }).validate({
         errorPlacement: function errorPlacement(error, element) { element.before(error); },
