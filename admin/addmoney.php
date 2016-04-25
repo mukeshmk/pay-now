@@ -2,6 +2,27 @@
 	require_once('../login/auth.php');
 ?>
 <!DOCTYPE html>
+<?php
+	$a_id=$_SESSION['SESS_MEMBER_ID'];
+	
+	$connect=mysqli_connect("localhost","root","");
+	if (mysqli_connect_errno()) 
+	{
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
+	$c="USE paynow;";
+	$c1=mysqli_query($connect,$c);
+	$q1="SELECT a_nm FROM admins WHERE admin_id=$a_id;";	
+	$result = $connect->query($q1);
+	$row=$result->fetch_assoc();
+	$a_nm=$row['a_nm'];
+	
+	if(!mysqli_query($connect,$q1))
+	{
+		echo("Error description 1: " . mysqli_error($connect));
+		echo('<br><br>');
+	}
+?>
 <html lang="en">
 <head>
 
@@ -48,7 +69,7 @@
 
 						<div class="container">
 					<ul class="nav navbar-nav navbar-right user-nav">
-						<li class="user-name"><span>Akihiko Avaron</span></li>
+						<li class="user-name"><span><?php echo $a_nm; ?></span></li>
 							<li class="dropdown avatar-dropdown">
 							 <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
 						</li>
