@@ -11,7 +11,7 @@
 	$c="USE paynow;";
 	$c1=mysqli_query($connect,$c);
 
-	$d="SELECT c_id, c_price FROM vendor_logs where v_id = ".$_SESSION['SESS_MEMBER_ID'].";";
+	$d="SELECT v_id, c_price FROM cust_logs where c_id = ".$_SESSION['SESS_MEMBER_ID'].";";
 	$d1=mysqli_query($connect,$d);
 
 	$_SESSION['qur']=$d;
@@ -40,7 +40,7 @@
             <thead>
                 <tr>
                     <th align='center'>Sr No</th>
-                    <th align='center'>Customer ID</th>
+                    <th align='center'>Vendor ID</th>
                     <th align='center'>Cost</th>
                 </tr>
             </thead>
@@ -54,7 +54,7 @@
        	echo "
 		<tr>
         <td align='center'>".$sno."</td>
-       	<td align='center'>".$row["c_id"]."</td>
+       	<td align='center'>".$row["v_id"]."</td>
 		<td align='center'>".$row["c_price"]."</td>
 		</tr>";
         $sno = $sno + 1;
